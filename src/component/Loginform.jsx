@@ -6,14 +6,13 @@ const Loginform = () => {
     const[password,setpassword]=useState('');
     const[error,seterror]=useState('');
     const handleSubmit= async (e)=>{
-        e.preventDefault(); //to prevent browser to refresh
-        // if username and password is correct
-        const authObject ={'Project-ID': "69991752-03ae-4258-9027-b90a1acca2af", 'User-Name':username,'User-Secret':password}
+        e.preventDefault(); 
+        const authObject ={'Project-ID': "a3b485ae-f40d-416c-af9d-61b2e7ec4a5a", 'User-Name':username,'User-Secret':password}
         try {
            await axios.get('https://api.chatengine.io/chats',{headers:authObject});
             localStorage.setItem('username',username);
             localStorage.setItem('password',password);
-        window.location.reload();
+            window.location.reload();
            
         } catch (err) {
             seterror('Credential is wrong');

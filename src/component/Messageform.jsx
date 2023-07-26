@@ -7,7 +7,6 @@ const Messageform = (props) => {
     const {chatId,creds} = props;
     const handleChange = (event)=>{
         setValue(event.target.value);
-        isTyping(props,chatId);
     }
     const handleSubmit = (event)=>{
         event.preventDefault() //browser won't refresh after submit

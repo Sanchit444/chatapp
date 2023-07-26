@@ -13,7 +13,6 @@ const Loginform = () => {
             localStorage.setItem('username',username);
             localStorage.setItem('password',password);
             window.location.reload();
-           
         } catch (err) {
             seterror('Credential is wrong');
         }

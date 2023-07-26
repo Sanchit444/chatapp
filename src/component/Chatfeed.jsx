@@ -2,13 +2,11 @@ import React from 'react'
 import Messageform from './Messageform';
 import Mymessage from './Mymessage';
 import Theirmessage from './Theirmessage';
-
 const Chatfeed = (props) => {
   //destructor to use like convinient
   const { chats, activeChat, userName, messages } = props;
   //if chat is true
   const chat = chats && chats[activeChat];
-
   //to readreceipt
   const renderReadReceipts = (message,isMyMessage)=>
     chat.people.map((person,index)=> person.last_read === message.id && (
@@ -17,8 +15,7 @@ const Chatfeed = (props) => {
       className="read-receipt"
       style={{
         float:isMyMessage? 'right':'left',
-        backgroundImage:`url(${person?.person?.avatar})`
-        
+        backgroundImage:`url(${person?.person?.avatar})`     
       }}
       />
     ))
@@ -34,6 +31,7 @@ const Chatfeed = (props) => {
     return keys.map((key, index) => {
       //message of that key
       const message = messages[key];
+      console.log(message);
       //find last message key
       const lastMessagekey = index === 0 ? null : keys[index - 1];
       //to know if message is ours

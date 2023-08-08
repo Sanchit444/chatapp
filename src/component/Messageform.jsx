@@ -15,7 +15,6 @@ const Messageform = (props) => {
         sendMessage(creds,chatId,{text});
         }  //send a message
         setValue(''); //blank a textbox after sending a message
-
     }
     //upload a files
     const handleUpload =(event)=>{
